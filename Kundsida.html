@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+
+
+</head>
+<body>
+    
+    <div style="height: 100%; background-image: radial-gradient(red, green, black);" id="bakgrund">
+
+        <h2 class="toptext">
+            <span id="Företagsnamn">
+        </h2>
+        <h2 class="beskrivning">
+            <span id="Beskrivning">
+        </h2>
+        <h2 class="tidertext">
+            Bokbara tider:
+        </h2>
+
+        <h2 class="tider">
+            <span id="Tider">
+        </h2>
+
+
+        <a href="bokahär.html">Boka</a>
+
+
+        <script> 
+            function getParameter( parameterName ) 
+            {
+                let parameters = new URLSearchParams( window.location.search ); 
+                return parameters.get( parameterName ); 
+            }
+
+        document.getElementById("Företagsnamn").innerHTML = getParameter("Företagsnamn")
+        document.getElementById("Beskrivning").innerHTML = getParameter("Beskrivning")
+        document.getElementById("Tider").innerHTML = getParameter("Tider")
+
+
+
+
+        let background = document.getElementById("bakgrund")
+
+    
+        console.log(background.style.height)
+
+
+        background.style.backgroundImage = "radial-gradient(black, green, black)"
+
+        console.log(background.style.backgroundImage)
+            // WORKS!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+
+
+
+        
+        // let posiX = getParameter("PositionX")
+        // let posiY = getParameter("PositionY")
+        // let inv = getParameter("Inversion")
+        // let secondposiX = getParameter("2ndPositionX")
+        // let secondposiY = getParameter("2ndPositionY")
+        // let sizeee = getParameter("Size")
+
+
+
+
+
+
+        // var c = document.getElementById("myCanvas");
+        // var ctx = c.getContext("2d");
+
+        // // console.log(posiX)
+        // console.log(secondposiX)
+        // // console.log(inv)
+        // // console.log(secondposiX)
+
+        // // Create gradient (Positionering från vänster, positionering från toppen, inverterad färg eller ej och smoothing på den(lite otydligt men testa dig fram), Färgdrag åt höger, Färgdrag neråt, storlek på färgdrag)
+        // let grd = ctx.createRadialGradient(posiX,posiY,inv,secondposiX,secondposiY,sizeee);
+        // grd.addColorStop(0,"red");
+        // grd.addColorStop(1,"white");
+
+        // // Fill with gradient
+        // ctx.fillStyle = grd;
+        // //                  (Positionering från vänster, positionering från toppen, storlek från vänster, storlek från toppen)
+
+
+        // ctx.fillRect(10,10,150,80);
+
+
+
+
+        // // PositionX=75&PositionY=50&Inversion=50&2ndPositionX=75&2ndPositionY=50&Size=250
+
+
+
+        
+
+
+
+
+        </script>
+
+
+
+    </div>
+</body>
+</html>
+
+

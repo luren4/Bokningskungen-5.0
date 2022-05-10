@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+ 
+
+</head>
+<body>
+    <title>Document</title>
+    <title>Get URL Parameters</title>  
+
+    <form action="Kundsida.html">
+        <input type="text" name="Företagsnamn" placeholder="Företagsnamn..."/>
+        <input type="text" name="Beskrivning" placeholder="Beskrivning..."/>
+        <input type="text" name="Tider" placeholder="Tider att boka..."/>
+
+
+        <input type="submit"/>
+    </form>
+
+
+    
+    <script>
+
+        function myFunction() 
+        {
+        console.log("klickade")
+        const params = (new URL(document.location)).searchParams
+        const paramFöretagsnamn = params.get('Företagsnamn')
+        const paramBeskrivning = params.get('Beskrivning')
+        const paramTider = params.get('Tider')
+
+        let nyurl = "Kundsida.html?Företagsnamn=" + paramFöretagsnamn + "&Beskrivning=" + paramBeskrivning + "&Tider=" + paramTider
+
+        location.replace(nyurl)
+        }
+
+
+
+
+
+
+        let posiX = 75
+        let posiY = 50
+        let inv = 40
+        let secondPosiX = 75
+        let secondPosiY = 50
+        let sizeee = 250
+
+
+
+        window.onload = function() {
+            makeColorUpdate()
+        }
+
+
+
+
+        var sliderPositionX = document.getElementById("PositionX");
+        var outputPositionX = document.getElementById("PosX");
+        outputPositionX.innerHTML = sliderPositionX.value; // Display the default slider value
+
+        // Update the current slider value (each time you drag the slider handle)
+        sliderPositionX.oninput = function() 
+        {
+            outputPositionX.innerHTML = this.value;
+            posiX = this.value
+            makeColorUpdate()
+            console.log("hej")
+        }
+
+
+
+
+
+        
+
+        var sliderPositionY = document.getElementById("PositionY");
+        var outputPositionY = document.getElementById("PosY");
+        outputPositionY.innerHTML = sliderPositionY.value; // Display the default slider value
+
+        // Update the current slider value (each time you drag the slider handle)
+        sliderPositionY.oninput = function() 
+        {
+            outputPositionY.innerHTML = this.value;
+            posiY = this.value
+            makeColorUpdate()
+        }
+
+
+
+
+
+
+        var sliderInversion = document.getElementById("Inversion");
+        var outputInversion = document.getElementById("Invers");
+        outputInversion.innerHTML = sliderInversion.value; // Display the default slider value
+
+         // Update the current slider value (each time you drag the slider handle)
+        sliderInversion.oninput = function() 
+         {
+            outputInversion.innerHTML = this.value;
+            inv = this.value
+            makeColorUpdate()
+         }
+
+
+
+
+
+        var slider2ndPositionX = document.getElementById("2ndPositionX");
+        var output2ndPositionX = document.getElementById("2ndPosX");
+        output2ndPositionX.innerHTML = slider2ndPositionX.value; // Display the default slider value
+
+        // Update the current slider value (each time you drag the slider handle)
+        slider2ndPositionX.oninput = function() 
+        {
+            outputPositionX.innerHTML = this.value;
+            secondPosiX = this.value
+            makeColorUpdate()
+        }
+
+
+
+        var slider2ndPositionY = document.getElementById("2ndPositionY");
+        var output2ndPositionY = document.getElementById("2ndPosY");
+        output2ndPositionY.innerHTML = slider2ndPositionY.value; // Display the default slider value
+
+        // Update the current slider value (each time you drag the slider handle)
+        slider2ndPositionY.oninput = function() 
+        {
+            outputPositionY.innerHTML = this.value;
+            secondPosiY = this.value
+            makeColorUpdate()
+        }
+
+
+
+        var sliderSize = document.getElementById("Size");
+        var outputSize = document.getElementById("Sizee");
+        outputSize.innerHTML = sliderSize.value; // Display the default slider value
+
+        // Update the current slider value (each time you drag the slider handle)
+        sliderSize.oninput = function() 
+        {
+            outputSize.innerHTML = this.value;
+            sizeee = this.value
+            makeColorUpdate()
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        function makeColorUpdate() 
+        {
+            var c = document.getElementById("myCanvas");
+            var ctx = c.getContext("2d");
+
+            // Create gradient (Positionering från vänster, positionering från toppen, inverterad färg eller ej och smoothing på den(lite otydligt men testa dig fram), Färgdrag åt höger, Färgdrag neråt, storlek på färgdrag)
+            var grd = ctx.createRadialGradient(posiX,posiY,inv,secondPosiX,secondPosiY,sizeee);
+            grd.addColorStop(0,"red");
+            grd.addColorStop(1,"white");
+
+            // Fill with gradient
+            ctx.fillStyle = grd;
+            //                  (Positionering från vänster, positionering från toppen, storlek från vänster, storlek från toppen)
+            ctx.fillRect(10,10,150,80);
+        }
+
+
+
+
+
+    </script>
+
+    
+</body>
+</html>
+
