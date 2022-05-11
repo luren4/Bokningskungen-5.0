@@ -5,6 +5,7 @@ html {
   height: 100%;
   color: wheat;
   font-size: 0, 0001vw;
+  height: 100%;
 }
 
 .toptext {
@@ -82,13 +83,28 @@ html {
   background: #04aa6d;
   cursor: pointer;
 }
-
-
-p, span {
-  margin: 0 0;
+p {
+  margin-bottom: 10px;
   display: block;
   margin-block-start: 0em;
   margin-block-end: 0em;
   margin-inline-start: 0px;
   margin-inline-end: 0px;
+}
+
+span {
+  margin-bottom: 10px;
+  display: block;
+  margin-block-start: 0em;
+  margin-block-end: 0em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+}
+
+.bakgrunden
+{
+  height: 100%;
+}
+input {
+  margin-bottom: 10px;
 }

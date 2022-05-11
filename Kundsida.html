@@ -10,7 +10,7 @@
 </head>
 <body>
     
-    <div style="height: 100%; background-image: radial-gradient(red, green, black);" id="bakgrund">
+    <div style="height: 100%;" id="bakgrund">
 
         <h2 class="toptext">
             <span id="Företagsnamn">
@@ -23,11 +23,10 @@
         </h2>
 
         <h2 class="tider">
+            <a href="error.html" style="text-decoration: none; color: wheat;">
             <span id="Tider">
+            </a>
         </h2>
-
-
-        <a href="bokahär.html">Boka</a>
 
 
         <script> 
@@ -46,30 +45,31 @@
 
         let background = document.getElementById("bakgrund")
 
-    
-        console.log(background.style.height)
 
 
-        background.style.backgroundImage = "radial-gradient(black, green, black)"
-
-        console.log(background.style.backgroundImage)
-            // WORKS!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+        // WORKS!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
 
 
 
         
-        // let posiX = getParameter("PositionX")
-        // let posiY = getParameter("PositionY")
-        // let inv = getParameter("Inversion")
-        // let secondposiX = getParameter("2ndPositionX")
-        // let secondposiY = getParameter("2ndPositionY")
-        // let sizeee = getParameter("Size")
+        let varRGB1 = getParameter("rgbvar1")
+        let varRGB2 = getParameter("rgbvar2")
+        let varRGB3 = getParameter("rgbvar3")
+        let transRGB = getParameter("rgbtransparency")
+        let secondvarRGB1 = getParameter("secondrgbvar1")
+        let secondvarRGB2 = getParameter("secondrgbvar2")
+        let secondvarRGB3 = getParameter("secondrgbvar3")
+        let secondtransRGB = getParameter("secondrgbtransparency")
+
+        console.log(secondvarRGB3)
 
 
 
 
-
+        background.style.backgroundImage =  "linear-gradient(rgba(" + varRGB1 + "," + varRGB2 + "," + varRGB3 + "," + transRGB / 100 + "),rgba(" + secondvarRGB1 + "," + secondvarRGB2 + "," + secondvarRGB3 + "," +  secondtransRGB / 100 + "))"
+        // background.style.backgroundImage = "linear-gradient(rgba(10, 10, 10, 10),rgba(10, 10, 0, 0.5))"
+        console.log(background.style.backgroundImage)
 
         // var c = document.getElementById("myCanvas");
         // var ctx = c.getContext("2d");
