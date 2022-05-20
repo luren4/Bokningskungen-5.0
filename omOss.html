@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="CSS/style.css">
+    <title>Företagsinformation</title>
+
+</head>
+<body>
+    
+    <div id="bakgrund" class="gradientbakgrund">
+        <!-- <div style="background-color: black; height: 10%;">
+            <h2>om oss</h2>
+            <h1>hem</h1>
+            <h2>boka</h2>
+
+
+        
+        </div> -->
+
+
+        <input type="checkbox" id="ham-menu">
+        <label for="ham-menu">
+          <div class="hide-des">
+            <span class="menu-line"></span>
+            <span class="menu-line"></span>
+            <span class="menu-line"></span>
+            <span class="menu-line"></span>
+            <span class="menu-line"></span>
+            <span class="menu-line"></span>
+          </div>
+        
+        </label>
+        <div class="full-page-green"></div>
+        <div class="ham-menu">
+          <ul class="centre-text bold-text">
+            <a
+              onclick="window.location='Kundsida.html'+window.location.search;"
+              class="menusidetext"
+              ><li>Hem</li></a
+            >
+            <a
+              onclick="window.location='omOss.html'+window.location.search;"
+              class="menusidetext"
+              ><li>Om oss</li></a
+            >
+            <a
+              onclick="window.location='boka.html'+window.location.search;"
+              class="menusidetext"
+              ><li>Boka tid</li></a
+            >
+            <a
+              onclick="window.location='Kontakt.html'+window.location.search;"
+              class="menusidetext"
+              ><li>Kontakt</li></a
+            >
+          </ul>
+        </div>
+
+
+
+
+
+
+        <header class="toptext">
+            Om oss på <span id="Företagsnamn" style="display: inline;"></span>
+        </header>
+        <h2 class="beskrivning">
+            <span id="Beskrivning"> </span>
+        </h2>
+
+
+
+
+        <script> 
+            function getParameter( parameterName ) 
+            {
+                let parameters = new URLSearchParams( window.location.search ); 
+                return parameters.get( parameterName ); 
+            }
+
+        document.getElementById("Företagsnamn").innerHTML = getParameter("Företagsnamn")
+        document.getElementById("Beskrivning").innerHTML = getParameter("Beskrivning")
+
+
+
+
+        let background = document.getElementById("bakgrund")
+
+
+
+        // WORKS!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+
+
+
+        
+        let varRGB1 = getParameter("rgbvar1")
+        let varRGB2 = getParameter("rgbvar2")
+        let varRGB3 = getParameter("rgbvar3")
+        let transRGB = getParameter("rgbtransparency")
+        let secondvarRGB1 = getParameter("secondrgbvar1")
+        let secondvarRGB2 = getParameter("secondrgbvar2")
+        let secondvarRGB3 = getParameter("secondrgbvar3")
+        let secondtransRGB = getParameter("secondrgbtransparency")
+
+        console.log(secondvarRGB3)
+
+
+
+
+        background.style.backgroundImage =  "linear-gradient(rgba(" + varRGB1 + "," + varRGB2 + "," + varRGB3 + "," + transRGB / 100 + "),rgba(" + secondvarRGB1 + "," + secondvarRGB2 + "," + secondvarRGB3 + "," +  secondtransRGB / 100 + "))"
+        // background.style.backgroundImage = "linear-gradient(rgba(10, 10, 10, 10),rgba(10, 10, 0, 0.5))"
+        console.log(background.style.backgroundImage)
+
+        // var c = document.getElementById("myCanvas");
+        // var ctx = c.getContext("2d");
+
+        // // console.log(posiX)
+        // console.log(secondposiX)
+        // // console.log(inv)
+        // // console.log(secondposiX)
+
+        // // Create gradient (Positionering från vänster, positionering från toppen, inverterad färg eller ej och smoothing på den(lite otydligt men testa dig fram), Färgdrag åt höger, Färgdrag neråt, storlek på färgdrag)
+        // let grd = ctx.createRadialGradient(posiX,posiY,inv,secondposiX,secondposiY,sizeee);
+        // grd.addColorStop(0,"red");
+        // grd.addColorStop(1,"white");
+
+        // // Fill with gradient
+        // ctx.fillStyle = grd;
+        // //                  (Positionering från vänster, positionering från toppen, storlek från vänster, storlek från toppen)
+
+
+        // ctx.fillRect(10,10,150,80);
+
+
+
+
+        // // PositionX=75&PositionY=50&Inversion=50&2ndPositionX=75&2ndPositionY=50&Size=250
+
+
+
+        
+
+
+
+
+        </script>
+
+
+
+    </div>
+</body>
+</html>
+
+

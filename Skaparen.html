@@ -4,19 +4,19 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-
+    <link rel="stylesheet" href="CSS/style.css">
+    <title>Skaparen</title>
  
 
 </head>
 <body>
 
-    <div id="bakgrund" style="background-image: linear-gradient(rgba(100, 0, 0, 0.5),rgba(100, 0, 0, 0.5))" class="bakgrunden">
+    <div id="bakgrund" class="gradientbakgrund">
 
         <form action="Kundsida.html">
-            <input type="text" name="Företagsnamn" placeholder="Företagsnamn..."/>
-            <input type="text" name="Beskrivning" placeholder="Beskrivning..."/>
-            <input type="text" name="Tider" placeholder="Tider att boka..."/>
+            <input type="text" class="formulärSkaparen" name="Företagsnamn" placeholder="Företagsnamn..."/>
+            <input type="text" class="beskrivningSkaparen" name="Beskrivning" placeholder="Beskrivning..."/>
+            <input type="text" class="formulärSkaparen" name="Tider" placeholder="Tider att boka..."/>
 
             <div class="slidecontainer">
                 <p>RGB-variable 1: <span id="rgb1"></span></p>
@@ -59,20 +59,16 @@
 
         function myFunction() 
         {
-        console.log("klickade")
-        const params = (new URL(document.location)).searchParams
-        const paramFöretagsnamn = params.get('Företagsnamn')
-        const paramBeskrivning = params.get('Beskrivning')
-        const paramTider = params.get('Tider')
+            console.log("klickade")
+            const params = (new URL(document.location)).searchParams
+            const paramFöretagsnamn = params.get('Företagsnamn')
+            const paramBeskrivning = params.get('Beskrivning')
+            const paramTider = params.get('Tider')
 
-        let nyurl = "Kundsida.html?Företagsnamn=" + paramFöretagsnamn + "&Beskrivning=" + paramBeskrivning + "&Tider=" + paramTider
+            let nyurl = "Kundsida.html?Företagsnamn=" + paramFöretagsnamn + "&Beskrivning=" + paramBeskrivning + "&Tider=" + paramTider
 
-        location.replace(nyurl)
+            location.replace(nyurl)
         }
-
-
-
-
 
 
         let varRGB1 = 127
@@ -106,16 +102,10 @@
         }
 
 
-
-
-
-        
-
         var sliderRGB2 = document.getElementById("rgbvar2");
         var outputRGB2 = document.getElementById("rgb2");
-        outputRGB2.innerHTML = sliderRGB2.value; // Display the default slider value
+        outputRGB2.innerHTML = sliderRGB2.value; 
 
-        // Update the current slider value (each time you drag the slider handle)
         sliderRGB2.oninput = function() 
         {
             outputRGB2.innerHTML = this.value;
@@ -123,16 +113,10 @@
             makeColorUpdate()
         }
 
-
-
-
-
-
         var sliderRGB3 = document.getElementById("rgbvar3");
         var outputRGB3 = document.getElementById("rgb3");
-        outputRGB3.innerHTML = sliderRGB3.value; // Display the default slider value
+        outputRGB3.innerHTML = sliderRGB3.value; 
 
-         // Update the current slider value (each time you drag the slider handle)
         sliderRGB3.oninput = function() 
          {
             outputRGB3.innerHTML = this.value;
@@ -141,14 +125,10 @@
          }
 
 
-
-
-
         var sliderRGBtrans = document.getElementById("rgbtransparency");
         var outputRGBtrans = document.getElementById("rgb4");
-        outputRGBtrans.innerHTML = sliderRGBtrans.value; // Display the default slider value
+        outputRGBtrans.innerHTML = sliderRGBtrans.value; 
 
-        // Update the current slider value (each time you drag the slider handle)
         sliderRGBtrans.oninput = function() 
         {
             outputRGBtrans.innerHTML = this.value;
@@ -160,9 +140,8 @@
 
         var slidersecondRGB1 = document.getElementById("secondrgbvar1");
         var outputsecondRGB1 = document.getElementById("rgb5");
-        outputsecondRGB1.innerHTML = slidersecondRGB1.value; // Display the default slider value
+        outputsecondRGB1.innerHTML = slidersecondRGB1.value; 
 
-        // Update the current slider value (each time you drag the slider handle)
         slidersecondRGB1.oninput = function() 
         {
             outputsecondRGB1.innerHTML = this.value;
@@ -171,12 +150,10 @@
         }
 
 
-
         var slidersecondRGB2 = document.getElementById("secondrgbvar2");
         var outputsecondRGB2 = document.getElementById("rgb6");
-        outputsecondRGB2.innerHTML = slidersecondRGB2.value; // Display the default slider value
+        outputsecondRGB2.innerHTML = slidersecondRGB2.value; 
 
-        // Update the current slider value (each time you drag the slider handle)
         slidersecondRGB2.oninput = function() 
         {
             outputsecondRGB2.innerHTML = this.value;
@@ -185,13 +162,10 @@
         }
 
 
-
-
         var slidersecondRGB3 = document.getElementById("secondrgbvar3");
         var outputsecondRGB3 = document.getElementById("rgb7");
-        outputsecondRGB3.innerHTML = slidersecondRGB3.value; // Display the default slider value
+        outputsecondRGB3.innerHTML = slidersecondRGB3.value; 
 
-        // Update the current slider value (each time you drag the slider handle)
         slidersecondRGB3.oninput = function() 
         {
             outputsecondRGB3.innerHTML = this.value;
@@ -202,9 +176,8 @@
 
         var slidersecondRGBtrans = document.getElementById("secondrgbtransparency");
         var outputsecondRGBtrans = document.getElementById("rgb8");
-        outputsecondRGBtrans.innerHTML = slidersecondRGBtrans.value; // Display the default slider value
+        outputsecondRGBtrans.innerHTML = slidersecondRGBtrans.value; 
 
-        // Update the current slider value (each time you drag the slider handle)
         slidersecondRGBtrans.oninput = function() 
         {
             outputsecondRGBtrans.innerHTML = this.value;
@@ -214,44 +187,14 @@
 
 
 
-
-
-
-
-
-
-
-
         function makeColorUpdate() 
         {
-            var c = document.getElementById("bakgrund");
-            console.log(bakgrund)
+            let c = document.getElementById("bakgrund");
 
             c.style.backgroundImage = "linear-gradient(rgba(" + varRGB1 + "," + varRGB2 + "," + varRGB3 + "," + transRGB / 100 + "),rgba(" + secondvarRGB1 + "," + secondvarRGB2 + "," + secondvarRGB3 + "," +  secondtransRGB / 100 + "))"
-            console.log(c.style.backgroundImage)
 
-            console.log(bakgrund)
-
-
-            
-            // Create gradient (Positionering från vänster, positionering från toppen, inverterad färg eller ej och smoothing på den(lite otydligt men testa dig fram), Färgdrag åt höger, Färgdrag neråt, storlek på färgdrag)
-            // var grd = ctx.createRadialGradient(posiX,posiY,inv,secondPosiX,secondPosiY,sizeee);
-            // grd.addColorStop(0,"red");
-            // grd.addColorStop(1,"white");
-
-            // Fill with gradient
-            // ctx.fillStyle = grd;
-            // //                  (Positionering från vänster, positionering från toppen, storlek från vänster, storlek från toppen)
-            // ctx.fillRect(10,10,150,80);
         }
-
-
-
-
-
     </script>
-
-    
 </body>
 </html>
 
