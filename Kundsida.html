@@ -23,26 +23,26 @@
       <div class="full-page-green"></div>
       <div class="ham-menu">
         <ul class="centre-text bold-text">
-            <a
-              onclick="window.location='Kundsida.html'+window.location.search;"
-              class="menusidetext"
-              ><li>Hem</li></a
-            >
-            <a
-              onclick="window.location='omOss.html'+window.location.search;"
-              class="menusidetext"
-              ><li>Om oss</li></a
-            >
-            <a
-              onclick="window.location='boka.html'+window.location.search;"
-              class="menusidetext"
-              ><li>Boka tid</li></a
-            >
-            <a
-              onclick="window.location='Kontakt.html'+window.location.search;"
-              class="menusidetext"
-              ><li>Kontakt</li></a
-            >
+          <a
+            onclick="window.location='Kundsida.html'+window.location.search;"
+            class="menusidetext"
+            ><li>Hem</li></a
+          >
+          <a
+            onclick="window.location='omOss.html'+window.location.search;"
+            class="menusidetext"
+            ><li>Om oss</li></a
+          >
+          <a
+            onclick="window.location='boka.html'+window.location.search;"
+            class="menusidetext"
+            ><li>Boka tid</li></a
+          >
+          <a
+            onclick="window.location='Kontakt.html'+window.location.search;"
+            class="menusidetext"
+            ><li>Kontakt</li></a
+          >
         </ul>
       </div>
 
@@ -52,13 +52,19 @@
       <h2 class="beskrivning">
         <span id="Beskrivning"> </span>
       </h2>
-      <h2 class="tidertext">Bokbara tider:</h2>
 
-      <h3 class="tider">
-        <a href="error.html" style="text-decoration: none; color: wheat">
-          <span id="Tider"> </span>
-        </a>
-      </h3>
+      <footer class="footer">
+        <div class="footerTop">
+          <p>Bokningskungen: <br />Lucas Eriksson <br />Kontakt:</p>
+        </div>
+        <div class="footerBottom">
+          <p>
+            LucasEriksson@bokkingen.com <br />
+            eller <br />
+            Instagram: Bokningskungen
+          </p>
+        </div>
+      </footer>
 
       <script>
         function getParameter(parameterName) {
@@ -70,7 +76,6 @@
           getParameter("Företagsnamn");
         document.getElementById("Beskrivning").innerHTML =
           getParameter("Beskrivning");
-        document.getElementById("Tider").innerHTML = getParameter("Tider");
 
         let background = document.getElementById("bakgrund");
 

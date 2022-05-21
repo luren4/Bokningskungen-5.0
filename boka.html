@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="CSS/style.css" />
-    <title>Bokningssida</title>
+    <title>Kundsida</title>
   </head>
   <body>
     <div id="bakgrund" class="gradientbakgrund">
@@ -46,25 +46,36 @@
         </ul>
       </div>
 
-      <h2 class="tidertext">Bokbara tider:</h2>
-
-      <h3 class="tider">
-        <a href="error.html" style="text-decoration: none; color: wheat">
-          <span id="Tider"> </span>
-        </a>
-      </h3>
+      <div class="background">
+        <div class="login-form">
+          <form>
+            <h1>Logga in för att se och boka tider</h1>
+            <div class="content">
+              <div class="input-field">
+                <input type="email" placeholder="Email" autocomplete="nope" />
+              </div>
+              <div class="input-field">
+                <input
+                  type="password"
+                  placeholder="Password"
+                  autocomplete="new-password"
+                />
+              </div>
+              <a href="#" class="link">Forgot Your Password?</a>
+            </div>
+            <div class="action">
+              <button>Register</button>
+              <button>Sign in</button>
+            </div>
+          </form>
+        </div>
+      </div>
 
       <script>
         function getParameter(parameterName) {
           let parameters = new URLSearchParams(window.location.search);
           return parameters.get(parameterName);
         }
-
-        document.getElementById("Företagsnamn").innerHTML =
-          getParameter("Företagsnamn");
-        document.getElementById("Beskrivning").innerHTML =
-          getParameter("Beskrivning");
-        document.getElementById("Tider").innerHTML = getParameter("Tider");
 
         let background = document.getElementById("bakgrund");
 
@@ -98,7 +109,29 @@
           secondtransRGB / 100 +
           "))";
 
-        console.log(background.style.backgroundImage);
+        function dropMenu() {
+          document.getElementById("drop").classList.toggle("show");
+        }
+
+        window.onclick = function (event) {
+          if (!event.target.matches("button")) {
+            var dropdowns = document.getElementsByClassName("dropdown-content");
+            var i;
+            for (i = 0; i < dropdowns.length; i++) {
+              var openDropdown = dropdowns[i];
+              if (openDropdown.classList.contains("show")) {
+                openDropdown.classList.remove("show");
+              }
+            }
+          }
+        };
+
+        let form = document.querySelecter("form");
+
+        form.addEventListener("submit", (e) => {
+          e.preventDefault();
+          return false;
+        });
       </script>
     </div>
   </body>

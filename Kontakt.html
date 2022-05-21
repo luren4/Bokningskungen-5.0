@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="CSS/style.css" />
+    <title>Kundsida</title>
+  </head>
+  <body>
+    <div id="bakgrund" class="gradientbakgrund">
+      <input type="checkbox" id="ham-menu" />
+      <label for="ham-menu">
+        <div class="hide-des">
+          <span class="menu-line"></span>
+          <span class="menu-line"></span>
+          <span class="menu-line"></span>
+          <span class="menu-line"></span>
+          <span class="menu-line"></span>
+          <span class="menu-line"></span>
+        </div>
+      </label>
+      <div class="full-page-green"></div>
+      <div class="ham-menu">
+        <ul class="centre-text bold-text">
+            <a
+              onclick="window.location='Kundsida.html'+window.location.search;"
+              class="menusidetext"
+              ><li>Hem</li></a
+            >
+            <a
+              onclick="window.location='omOss.html'+window.location.search;"
+              class="menusidetext"
+              ><li>Om oss</li></a
+            >
+            <a
+              onclick="window.location='boka.html'+window.location.search;"
+              class="menusidetext"
+              ><li>Boka tid</li></a
+            >
+            <a
+              onclick="window.location='Kontakt.html'+window.location.search;"
+              class="menusidetext"
+              ><li>Kontakt</li></a
+            >
+        </ul>
+      </div>
+
+      <header class="toptext">
+        <span id="Företagsnamn"></span>
+      </header>
+      <h2 class="beskrivning">
+          Kontakta oss genom mail: <span id="Email"></span>
+      </h2>
+
+
+
+      <footer class="footer">
+        <div class="footerTop">
+          <p>Bokningskungen: <br />Lucas Eriksson <br />Kontakt:</p>
+        </div>
+        <div class="footerBottom">
+          <p>
+            LucasEriksson@bokkingen.com <br />
+            eller <br />
+            Instagram: Bokningskungen
+          </p>
+        </div>
+      </footer>
+
+
+
+      <script>
+        function getParameter(parameterName) {
+          let parameters = new URLSearchParams(window.location.search);
+          return parameters.get(parameterName);
+        }
+
+        document.getElementById("Företagsnamn").innerHTML =
+          getParameter("Företagsnamn");
+        document.getElementById("Email").innerHTML =
+          getParameter("Email");
+
+
+        let background = document.getElementById("bakgrund");
+
+        let varRGB1 = getParameter("rgbvar1");
+        let varRGB2 = getParameter("rgbvar2");
+        let varRGB3 = getParameter("rgbvar3");
+        let transRGB = getParameter("rgbtransparency");
+        let secondvarRGB1 = getParameter("secondrgbvar1");
+        let secondvarRGB2 = getParameter("secondrgbvar2");
+        let secondvarRGB3 = getParameter("secondrgbvar3");
+        let secondtransRGB = getParameter("secondrgbtransparency");
+
+        console.log(secondvarRGB3);
+
+        background.style.backgroundImage =
+          "linear-gradient(rgba(" +
+          varRGB1 +
+          "," +
+          varRGB2 +
+          "," +
+          varRGB3 +
+          "," +
+          transRGB / 100 +
+          "),rgba(" +
+          secondvarRGB1 +
+          "," +
+          secondvarRGB2 +
+          "," +
+          secondvarRGB3 +
+          "," +
+          secondtransRGB / 100 +
+          "))";
+
+        console.log(background.style.backgroundImage);
+      </script>
+    </div>
+  </body>
+</html>

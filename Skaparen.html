@@ -16,7 +16,7 @@
         <form action="Kundsida.html">
             <input type="text" class="formulärSkaparen" name="Företagsnamn" placeholder="Företagsnamn..."/>
             <input type="text" class="beskrivningSkaparen" name="Beskrivning" placeholder="Beskrivning..."/>
-            <input type="text" class="formulärSkaparen" name="Tider" placeholder="Tider att boka..."/>
+            <input type="text" class="formulärSkaparen" name="Email" placeholder="Email..."/>
 
             <div class="slidecontainer">
                 <p>RGB-variable 1: <span id="rgb1"></span></p>
@@ -63,9 +63,9 @@
             const params = (new URL(document.location)).searchParams
             const paramFöretagsnamn = params.get('Företagsnamn')
             const paramBeskrivning = params.get('Beskrivning')
-            const paramTider = params.get('Tider')
+            const paramEmail = params.get('Email')
 
-            let nyurl = "Kundsida.html?Företagsnamn=" + paramFöretagsnamn + "&Beskrivning=" + paramBeskrivning + "&Tider=" + paramTider
+            let nyurl = "Kundsida.html?Företagsnamn=" + paramFöretagsnamn + "&Beskrivning=" + paramBeskrivning + "&Email=" + paramEmail
 
             location.replace(nyurl)
         }
